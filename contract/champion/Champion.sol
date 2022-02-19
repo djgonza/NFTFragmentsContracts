@@ -2,10 +2,10 @@
 pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
-import "../../library/ECDSA.sol";
-import "./Permission.sol";
-import "./FeeController.sol";
-import "./NonceController.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/library/ECDSA.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/Permission.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/FeeController.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/NonceController.sol";
 
 contract Champion is ERC721, Permission, FeeController, NonceController {
 
@@ -66,7 +66,7 @@ contract Champion is ERC721, Permission, FeeController, NonceController {
         uint256 tokenId,
         uint256 nonce,
         bytes memory signature
-    ) public payable validateNonce(nonce) checkFee {
+    ) public payable validateNonce(nonce) payFee {
         require(ownerOf(tokenId) == to, "Not token owner");
         address signer = getBurnSigner(to, tokenId, nonce, signature);
         require(_burners[signer], "Not permission to mint");

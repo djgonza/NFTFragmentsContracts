@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./Permission.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/Permission.sol";
 
 contract FeeController is Permission {
     uint256 _fee = 1 ether / 100; //0.01$

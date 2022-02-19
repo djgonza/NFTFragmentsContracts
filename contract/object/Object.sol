@@ -2,10 +2,10 @@
 pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
-import "../../library/ECDSA.sol";
-import "./Permission.sol";
-import "./FeeController.sol";
-import "./NonceController.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/library/ECDSA.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/Permission.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/FeeController.sol";
+import "https://github.com/djgonza/NFTFragmentsContracts/blob/master/contract/utils/NonceController.sol";
 
 contract Object is ERC721, Permission, FeeController, NonceController {
     using ECDSA for bytes32;
